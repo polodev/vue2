@@ -3,39 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>vue practice</title>
-  <style></style>
   <script src="vue2.js"></script>
 </head>
 <body>
-<div id="root">
-<h1>All tasks</h1>
-<ul>
-  <li v-for="task in tasks" v-text="task.name"></li>
-</ul>
-<h1>Incompleted tasks</h1>
-<ul>
-  <li v-for="task in inCompletedTasks" v-text="task.name"></li>
-</ul>
-</div>
-<script>
-var app = new Vue({
-  el: '#root',
-  data: {
-    tasks : [
-      {name: 'Waking up', completed: true},
-      {name: 'Brash teeth', completed: true},
-      {name: 'take food', completed: true},
-      {name: 'work for long time', completed: false},
-      {name: 'do gym', completed: false},
-      {name: 'do bath', completed: false},
-    ]
-  },
-  computed: {
-    inCompletedTasks() {
-      return this.tasks.filter(task => !task.completed)
-    }
-  }
-})
-</script>
+  <div id="root">
+    <task>Hello</task>
+    <task>World</task>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>

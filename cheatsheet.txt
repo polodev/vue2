@@ -44,3 +44,13 @@ computed: {
 //inside console
 $vm0.tasks[0].completed = false
 
+Vue component
+=====================================================
+Vue.component('task', {
+  template: '<li><slot></slot></li>'
+})
+new Vue({
+  el : '#root'
+})
+<task>Hello</task>
+<task>World</task>
