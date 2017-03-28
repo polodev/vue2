@@ -16,3 +16,14 @@ v-if, v-text
 =========================
 <li v-for="name in names" v-text="name"></li>
 mounted() {}
+
+v-on:keyup, v-on:click, @click, methods: {}
+======================================================================
+<button v-on:click="addName" id="button">add name</button>
+        ====:=====
+        directive: argument
+<button @click="addName" id="button">add name</button>
+methods: {
+  addName() {
+  }
+}
