@@ -17,7 +17,7 @@ v-if, v-text
 <li v-for="name in names" v-text="name"></li>
 mounted() {}
 
-v-on:keyup, v-on:click, @click, methods: {}
+v-on:keyup, v-on:click || @click, methods: {}, directive:argument
 ======================================================================
 <button v-on:click="addName" id="button">add name</button>
         ====:=====
@@ -27,3 +27,7 @@ methods: {
   addName() {
   }
 }
+
+attribute binding v-bind:title="" || :title
+===========================================================================
+<button v-bind:title="title" :class="{ isActive: isActive }" @click="toggleIsActive">Hello world</button>

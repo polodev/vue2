@@ -3,31 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>vue practice</title>
+  <style>
+    .red-color {
+      color: red;
+    }
+    .isActive {
+      color: green;
+    }
+  </style>
   <script src="vue2.js"></script>
 </head>
 <body>
 <div id="root">
-<ul>
-  <li v-for="name in names" v-text="name"></li>
-</ul>
-<input type="text" v-model="newName">
-<button @click="addName" id="button">add name</button>
+<button v-bind:title="title" :class="redColor">Hello world</button>
+<br>
+<button v-bind:title="title" :class="{ isActive: isActive }" @click="toggleIsActive">Hello world</button>
 </div>
 <script>
 var app = new Vue({
   el: '#root',
   data: {
-    names: ['Rekha', 'Polo', 'Ranjith', 'Vasanth'],
-    newName: ''
+    title: 'this is the title by js',
+    redColor: 'red-color',
+    isActive: false
   },
   methods: {
-    addName() {
-      this.names.push(this.newName);
-      this.newName = '' 
+    toggleIsActive () {
+      this.isActive = !this.isActive
     }
-  },
-  mounted() {
-
   }
 })
 </script>
