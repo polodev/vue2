@@ -3,33 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>vue practice</title>
-  <style>
-    .red-color {
-      color: red;
-    }
-    .isActive {
-      color: green;
-    }
-  </style>
+  <style></style>
   <script src="vue2.js"></script>
 </head>
 <body>
 <div id="root">
-<button v-bind:title="title" :class="redColor">Hello world</button>
-<br>
-<button v-bind:title="title" :class="{ isActive: isActive }" @click="toggleIsActive">Hello world</button>
+<h1>All tasks</h1>
+<ul>
+  <li v-for="task in tasks" v-text="task.name"></li>
+</ul>
+<h1>Incompleted tasks</h1>
+<ul>
+  <li v-for="task in inCompletedTasks" v-text="task.name"></li>
+</ul>
 </div>
 <script>
 var app = new Vue({
   el: '#root',
   data: {
-    title: 'this is the title by js',
-    redColor: 'red-color',
-    isActive: false
+    tasks : [
+      {name: 'Waking up', completed: true},
+      {name: 'Brash teeth', completed: true},
+      {name: 'take food', completed: true},
+      {name: 'work for long time', completed: false},
+      {name: 'do gym', completed: false},
+      {name: 'do bath', completed: false},
+    ]
   },
-  methods: {
-    toggleIsActive () {
-      this.isActive = !this.isActive
+  computed: {
+    inCompletedTasks() {
+      return this.tasks.filter(task => !task.completed)
     }
   }
 })

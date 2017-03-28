@@ -12,7 +12,7 @@ new Vue ({
   <p>{{ message }}</p>
 </div>
 
-v-if, v-text
+v-for, v-text
 =========================
 <li v-for="name in names" v-text="name"></li>
 mounted() {}
@@ -31,3 +31,16 @@ methods: {
 attribute binding v-bind:title="" || :title
 ===========================================================================
 <button v-bind:title="title" :class="{ isActive: isActive }" @click="toggleIsActive">Hello world</button>
+
+v-if, computed
+===================================================================
+<li v-if="task.completed" v-for="task in tasks" v-text="task.name"></li>
+<li v-for="task in inCompletedTasks" v-text="task.name"></li>
+computed: {
+  inCompletedTasks() {
+    return this.tasks.filter(task => !task.completed)
+  }
+}
+//inside console
+$vm0.tasks[0].completed = false
+
