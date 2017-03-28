@@ -11,3 +11,8 @@ new Vue ({
   <input type="text" v-model="message" />
   <p>{{ message }}</p>
 </div>
+
+v-if, v-text
+=========================
+<li v-for="name in names" v-text="name"></li>
+mounted() {}
