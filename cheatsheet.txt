@@ -1,0 +1,13 @@
+first vue instance
+=========================================
+new Vue ({
+  el: '#root',
+  data: {
+    message: 'some message'
+  }
+})
+//in html
+<div id="root">
+  <input type="text" v-model="message" />
+  <p>{{ message }}</p>
+</div>
