@@ -44,7 +44,7 @@ computed: {
 //inside console
 $vm0.tasks[0].completed = false
 
-Vue component
+Vue component, slot
 =====================================================
 Vue.component('task', {
   template: '<li><slot></slot></li>'
@@ -54,3 +54,34 @@ new Vue({
 })
 <task>Hello</task>
 <task>World</task>
+
+v-for inside Vue.component, data function inside vue.component
+=====================================================
+Vue.component('task-list', {
+  template: `
+    <div>
+      <task v-for="task in tasks">{{task.name}}</task>
+    </div>
+  `,
+  data () {
+    return {
+      tasks : []
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
