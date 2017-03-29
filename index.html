@@ -13,11 +13,8 @@
 </head>
 <body>
 <div id="root">
-  <message title="hello world" body="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, placeat!"></message>
-  <message title="hello rekha" body="I love you rekha"></message>
-  <message title="hello adimulam" body="I love you rekha adimulam"></message>
-  <message title="hello joythi" body="I love you rekha adimulam joythi"></message>
-  <message title="hello Sree" body="I love you rekha adimulam joythi Sree"></message>
+  <button @click="showModal">show modal</button>
+  <modal v-show="modal" @close="hideModal"></modal>
 </div>
 <script src="script.js"></script>
 </body>

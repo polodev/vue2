@@ -76,6 +76,13 @@ v-show
 <button class="delete" @click="isActive = false"></button>
 <article class="message" v-show="isActive">
 
+custom function emit 
+===============================
+//index.htm
+<modal v-show="modal" @close="hideModal"></modal>
+//script > template     |
+<button @click="$emit('close')" class="modal-close"></button>
+
 
 
 
