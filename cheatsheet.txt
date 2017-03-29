@@ -70,18 +70,30 @@ Vue.component('task-list', {
   }
 }
 
-v-show
+v-show, message box hiding
 =================================
 <button class="delete" @click="hideMessage"></button>
 <button class="delete" @click="isActive = false"></button>
 <article class="message" v-show="isActive">
 
-custom function emit 
-===============================
+custom function emit, hiding modal and closing
+==============================================================
 //index.htm
 <modal v-show="modal" @close="hideModal"></modal>
 //script > template     |
 <button @click="$emit('close')" class="modal-close"></button>
+
+bulma tab practice, this.$children, 
+==============================================================
+mounted () {
+  this.tabs = this.$children
+},
+//tab props
+props: {
+  name: {required: true},
+  selected: {default: false}
+},
+v-show now work inside <slot></slot>
 
 
 

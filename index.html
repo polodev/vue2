@@ -5,16 +5,21 @@
   <title>vue practice</title>
   <link rel="stylesheet" href="bulma.css">
   <script src="vue2.js"></script>
-  <style>
-    article {
-      margin-top: 25px;
-    }
-  </style>
+  <style></style>
 </head>
 <body>
 <div id="root">
-  <button @click="showModal">show modal</button>
-  <modal v-show="modal" @close="hideModal"></modal>
+  <tabs>
+    <tab name="company objective" selected="true">
+      <p>company has objective</p>
+    </tab>
+    <tab name="company vision">
+      <p>company has vision</p>
+    </tab>
+    <tab name="company mission">
+      <p>company has mission</p>
+    </tab>
+  </tabs>
 </div>
 <script src="script.js"></script>
 </body>
