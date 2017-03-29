@@ -70,6 +70,12 @@ Vue.component('task-list', {
   }
 }
 
+v-show
+=================================
+<button class="delete" @click="hideMessage"></button>
+<button class="delete" @click="isActive = false"></button>
+<article class="message" v-show="isActive">
+
 
 
 

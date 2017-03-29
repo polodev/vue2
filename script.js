@@ -1,25 +1,30 @@
-Vue.component('task-list', {
+Vue.component('message', {
+  props: ['title', 'body'],
   template: `
-    <div>
-      <task v-for="task in tasks">{{task.name}}</task>
-    </div>
+    <article class="message" v-show="isActive">
+      <div class="message-header">
+        <p>{{title}}</p>
+        <button class="delete" @click="hideMessage"></button>
+        <button class="delete" @click="isActive = false"></button>
+      </div>
+      <div class="message-body">
+        {{body}}
+      </div>
+    </article>
   `,
   data () {
     return {
-        tasks : [
-        {name: 'Waking up', completed: true},
-        {name: 'Brash teeth', completed: true},
-        {name: 'take food', completed: true},
-        {name: 'work for long time', completed: false},
-        {name: 'do gym', completed: false},
-        {name: 'do bath', completed: false},
-      ]
+      isActive: true
+    }
+  },
+  methods: {
+    hideMessage () {
+      this.isActive = false
     }
   }
+
 })
-Vue.component('task', {
-  template: '<li><slot></slot></li>'
-})
+
 new Vue({
-  el : '#root'
+  el: '#root'
 })
