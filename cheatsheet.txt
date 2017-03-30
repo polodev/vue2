@@ -117,6 +117,13 @@ created () {
   })
 }
 
+name slot and default slot
+==============================================================
+<template slot="title">This is heading</template>
+<div slot="footer">footer content</div>
+//scripts > template:
+<slot name="title"></slot>
+<slot name="footer"> default footer content </slot>
 
 
 
