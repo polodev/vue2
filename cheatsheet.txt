@@ -95,7 +95,17 @@ props: {
 },
 v-show now work inside <slot></slot>
 
-
+communication between child and parents
+==============================================================
+<coupon @applied="onCouponApplied"></coupon>
+<p v-if="isCouponApplied">coupon was applied</p>
+//scripts
+localOnCouponApplied () {
+  this.$emit('applied')
+}
+onCouponApplied() {
+  this.isCouponApplied = true
+}
 
 
 
