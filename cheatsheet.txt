@@ -125,6 +125,10 @@ name slot and default slot
 <slot name="title"></slot>
 <slot name="footer"> default footer content </slot>
 
+inline-template in chapter 15
+==============================================================
+<progress-view inline-template>
+
 
 
 

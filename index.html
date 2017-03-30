@@ -10,14 +10,12 @@
 </head>
 <body>
 <div id="root">
-  <modal>
-    <template slot="title">This is heading</template>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis animi iste quas quidem autem ipsam, error a, ducimus earum, fugiat optio ab. Perspiciatis facilis nihil laboriosam voluptatibus fuga, beatae. Incidunt!
-    <div slot="footer">
-       <a class="button is-success">Save changes</a>
-      <a class="button">Cancel</a>       
+  <progress-view inline-template>
+    <div>
+      <p>completion rate of this progress is {{ completionRate }}% </p>
+      <button @click="completionRate += 10">Increase completion</button>
     </div>
-  </modal>
+  </progress-view>
 </div>
 <script src="script.js"></script>
 </body>
