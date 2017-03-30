@@ -1,10 +1,23 @@
+//window.Event = new Vue();
+// Event.$emit('applied')
+window.Event = new class {
+  constructor() {
+    this.vue = new Vue();
+  }
+  fire(event, data) {
+    this.vue.$emit(event, data);
+  }
+  listen(event, callback) {
+    this.vue.$on(event, callback)
+  }
+}
 Vue.component('coupon', {
   template: `
     <input type="text" @blur="localOnCouponApplied" />
   `,
   methods: {
     localOnCouponApplied () {
-      this.$emit('applied')
+      Event.fire('applied')
     }
   }
 })
@@ -16,9 +29,10 @@ new Vue({
     modal: false,
     isCouponApplied: false
   },
-  methods: {
-    onCouponApplied() {
-      this.isCouponApplied = true
-    }
+  created () {
+    Event.listen('applied', function() {
+      alert('coupon handled');
+    })
   }
+
 })

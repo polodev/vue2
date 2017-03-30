@@ -107,6 +107,15 @@ onCouponApplied() {
   this.isCouponApplied = true
 }
 
+communication in between child, parents and siblings $emit() and $on
+==============================================================
+$emit(event, data) // for firing a event
+$on (event, callback) // for listening a event
+created () {
+  Event.listen('applied', function() {
+    alert('coupon handled');
+  })
+}
 
 
 
