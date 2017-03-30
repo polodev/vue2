@@ -129,6 +129,14 @@ inline-template in chapter 15
 ==============================================================
 <progress-view inline-template>
 
+@18 laravel,  using axios and @{{}}
+==============================
+axios.get('/skills').then(response => {
+  this.skills = response.data
+})
+<li v-for="skill in skills" v-text="skill"></li>
+
+
 
 
 
